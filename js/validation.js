@@ -205,7 +205,21 @@ function showLoadingState(button, isLoading) {
     if (isLoading) {
         const originalText = button.textContent;
         button.setAttribute('data-original-text', originalText);
-        button.innerHTML = '<span class="spinner"></span> Отправка...';
+        
+        // Очищаем содержимое кнопки
+        button.textContent = '';
+        
+        // Создаем спиннер через DOM API
+        const spinner = document.createElement('span');
+        spinner.className = 'spinner';
+        
+        // Создаем текстовый узел
+        const text = document.createTextNode(' Отправка...');
+        
+        // Добавляем элементы в кнопку
+        button.appendChild(spinner);
+        button.appendChild(text);
+        
         button.disabled = true;
         
         // Добавляем стили для спиннера
@@ -226,19 +240,29 @@ function showSuccessMessage(form) {
     // Создаем элемент успешного сообщения
     const successMessage = document.createElement('div');
     successMessage.className = 'success-message';
-    successMessage.innerHTML = `
-        <div style="
-            background-color: var(--color-success);
-            color: white;
-            padding: var(--spacing-lg);
-            border-radius: var(--radius-md);
-            text-align: center;
-            margin-top: var(--spacing-lg);
-        ">
-            <h3 style="margin-bottom: var(--spacing-sm);">✅ Заявка отправлена!</h3>
-            <p>Спасибо за вашу заявку. Я свяжусь с вами в течение 24 часов.</p>
-        </div>
-    `;
+    
+    // Создаем внутренний контейнер
+    const container = document.createElement('div');
+    container.style.backgroundColor = 'var(--color-success)';
+    container.style.color = 'white';
+    container.style.padding = 'var(--spacing-lg)';
+    container.style.borderRadius = 'var(--radius-md)';
+    container.style.textAlign = 'center';
+    container.style.marginTop = 'var(--spacing-lg)';
+    
+    // Создаем заголовок
+    const heading = document.createElement('h3');
+    heading.textContent = '✅ Заявка отправлена!';
+    heading.style.marginBottom = 'var(--spacing-sm)';
+    
+    // Создаем параграф
+    const paragraph = document.createElement('p');
+    paragraph.textContent = 'Спасибо за вашу заявку. Я свяжусь с вами в течение 24 часов.';
+    
+    // Собираем структуру
+    container.appendChild(heading);
+    container.appendChild(paragraph);
+    successMessage.appendChild(container);
     
     // Вставляем сообщение перед формой
     form.parentElement.insertBefore(successMessage, form);

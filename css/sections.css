@@ -198,11 +198,15 @@
 }
 
 .footer a {
-    color: var(--color-primary);
+    color: var(--color-light);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 2px;
 }
 
 .footer a:hover {
     color: white;
+    text-decoration: none;
 }
 
 .footer-bottom {

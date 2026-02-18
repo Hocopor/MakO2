@@ -10,9 +10,6 @@ Sitemap: https://psychologist-landing.com/sitemap.xml
 # Скорость сканирования
 Crawl-delay: 1
 
-# Предпочтительный хост
-Host: https://psychologist-landing.com
-
 # Директивы для поисковых систем
 User-agent: Googlebot
 Allow: /

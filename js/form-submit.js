@@ -186,10 +186,23 @@ function showLoadingState(button, isLoading) {
     if (isLoading) {
         const originalText = button.textContent;
         button.setAttribute('data-original-text', originalText);
-        button.innerHTML = `
-            <span class="submit-spinner"></span>
-            <span class="submit-text">Отправка...</span>
-        `;
+        
+        // Очищаем содержимое кнопки
+        button.textContent = '';
+        
+        // Создаем спиннер
+        const spinner = document.createElement('span');
+        spinner.className = 'submit-spinner';
+        
+        // Создаем текстовый элемент
+        const textSpan = document.createElement('span');
+        textSpan.className = 'submit-text';
+        textSpan.textContent = 'Отправка...';
+        
+        // Добавляем элементы в кнопку
+        button.appendChild(spinner);
+        button.appendChild(textSpan);
+        
         button.disabled = true;
         
         // Добавляем стили для спиннера, если их еще нет
