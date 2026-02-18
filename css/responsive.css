@@ -1,0 +1,158 @@
+/* Responsive - Медиа-запросы */
+
+/* Mobile (320px - 767px) - базовые стили уже mobile-first */
+
+/* Tablet (768px - 1023px) */
+@media (min-width: 768px) {
+    .hero-title {
+        font-size: 3rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.5rem;
+    }
+    
+    .nav-cta {
+        display: inline-flex;
+    }
+    
+    .services-grid,
+    .benefits-grid,
+    .reviews-slider {
+        gap: var(--spacing-xl);
+    }
+    
+    .footer-grid {
+        gap: var(--spacing-xl);
+    }
+}
+
+/* Desktop (1024px+) */
+@media (min-width: 1024px) {
+    .hero-title {
+        font-size: var(--fs-h1);
+    }
+    
+    .hero-subtitle {
+        font-size: 1.75rem;
+    }
+    
+    .section-title {
+        font-size: var(--fs-h2);
+    }
+    
+    .services-grid,
+    .benefits-grid,
+    .reviews-slider {
+        gap: var(--spacing-xxl);
+    }
+    
+    .footer-grid {
+        gap: var(--spacing-xxl);
+    }
+}
+
+/* Большие экраны (1440px+) */
+@media (min-width: 1440px) {
+    .container {
+        max-width: 1400px;
+    }
+}
+
+/* Адаптация для очень маленьких экранов */
+@media (max-width: 374px) {
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+    
+    .btn {
+        padding: var(--spacing-sm) var(--spacing-lg);
+        font-size: 0.875rem;
+    }
+    
+    .btn-large {
+        padding: var(--spacing-md) var(--spacing-xl);
+    }
+}
+
+/* Портретная ориентация */
+@media (orientation: portrait) {
+    .hero {
+        min-height: 90vh;
+    }
+}
+
+/* Ландшафтная ориентация */
+@media (orientation: landscape) and (max-height: 600px) {
+    .hero {
+        min-height: 120vh;
+    }
+    
+    .header {
+        position: absolute;
+    }
+}
+
+/* Высокий DPI экраны */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .hero-image img {
+        image-rendering: -webkit-optimize-contrast;
+        image-rendering: crisp-edges;
+    }
+}
+
+/* Темная тема (опционально) */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --color-light: #1a1a1a;
+        --color-dark: #f5f5f5;
+        --color-primary: #2a2a2a;
+        --color-secondary: #3a3a3a;
+    }
+    
+    body {
+        background-color: var(--color-light);
+        color: var(--color-dark);
+    }
+    
+    .card {
+        background-color: var(--color-secondary);
+    }
+}
+
+/* Печать */
+@media print {
+    .header,
+    .footer,
+    .hero-actions,
+    .contact-form,
+    .burger-menu {
+        display: none !important;
+    }
+    
+    body {
+        font-size: 12pt;
+        line-height: 1.5;
+        color: black;
+        background: white;
+    }
+    
+    a {
+        color: black;
+        text-decoration: underline;
+    }
+    
+    .container {
+        max-width: 100%;
+        padding: 0;
+    }
+    
+    section {
+        padding: 1cm 0;
+        page-break-inside: avoid;
+    }
+}

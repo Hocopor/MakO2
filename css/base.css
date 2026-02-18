@@ -1,0 +1,99 @@
+/* Base Styles - Базовые стили */
+body {
+    font-family: var(--font-body);
+    font-size: var(--fs-body);
+    line-height: var(--lh-body);
+    color: var(--color-dark);
+    background-color: var(--color-light);
+    overflow-x: hidden;
+}
+
+/* Типографика */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    font-weight: 600;
+    line-height: var(--lh-heading);
+    margin-bottom: var(--spacing-md);
+}
+
+h1 {
+    font-size: var(--fs-h1);
+}
+
+h2 {
+    font-size: var(--fs-h2);
+}
+
+h3 {
+    font-size: var(--fs-h3);
+}
+
+h4 {
+    font-size: var(--fs-h4);
+}
+
+p {
+    margin-bottom: var(--spacing-md);
+}
+
+small {
+    font-size: var(--fs-small);
+    line-height: var(--lh-small);
+}
+
+/* Ссылки */
+a {
+    color: var(--color-accent);
+    transition: color var(--transition-fast) var(--easing);
+}
+
+a:hover {
+    color: var(--color-dark);
+}
+
+/* Контейнер */
+.container {
+    width: 100%;
+    max-width: var(--container-max-width);
+    margin: 0 auto;
+    padding: 0 var(--container-padding-mobile);
+}
+
+@media (min-width: 768px) {
+    .container {
+        padding: 0 var(--container-padding-tablet);
+    }
+}
+
+/* Секции */
+section {
+    padding: var(--spacing-xxxl) 0;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: var(--spacing-xxl);
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: var(--color-accent);
+    margin: var(--spacing-md) auto;
+}
+
+/* Утилиты для скрытия элементов */
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}

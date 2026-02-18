@@ -1,0 +1,42 @@
+# Robots.txt для лендинга психолога
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /private/
+
+# Карта сайта
+Sitemap: https://psychologist-landing.com/sitemap.xml
+
+# Скорость сканирования
+Crawl-delay: 1
+
+# Предпочтительный хост
+Host: https://psychologist-landing.com
+
+# Директивы для поисковых систем
+User-agent: Googlebot
+Allow: /
+Disallow: /private/
+
+User-agent: Yandex
+Allow: /
+Disallow: /private/
+Clean-param: utm_source&utm_medium&utm_campaign
+
+# Боты для изображений
+User-agent: Googlebot-Image
+Allow: /images/
+
+User-agent: YandexImages
+Allow: /images/
+
+# Боты для мобильных
+User-agent: Googlebot-Mobile
+Allow: /
+
+# Запрет для определенных ботов
+User-agent: AhrefsBot
+Crawl-delay: 10
+
+User-agent: SemrushBot
+Crawl-delay: 10

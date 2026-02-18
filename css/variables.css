@@ -1,0 +1,77 @@
+/* CSS Variables - Дизайн-система */
+:root {
+    /* Цветовая палитра */
+    --color-primary: #F5E9D9;
+    --color-secondary: #E8D5C4;
+    --color-accent: #D4B59E;
+    --color-dark: #5A4A42;
+    --color-light: #FFFBF7;
+    --color-success: #A3C9A8;
+    --color-error: #E8B4B8;
+    
+    /* Градиенты */
+    --gradient-hero: linear-gradient(to bottom, var(--color-primary), var(--color-light));
+    --gradient-button: linear-gradient(to bottom, var(--color-accent), #C4A58C);
+    
+    /* Типографика */
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Open Sans', sans-serif;
+    --font-accent: 'Cormorant Garamond', serif;
+    
+    /* Размеры шрифтов (mobile-first) */
+    --fs-h1: 2.5rem;
+    --fs-h2: 2rem;
+    --fs-h3: 1.75rem;
+    --fs-h4: 1.5rem;
+    --fs-body: 1rem;
+    --fs-small: 0.875rem;
+    
+    /* Межстрочные интервалы */
+    --lh-heading: 1.2;
+    --lh-body: 1.6;
+    --lh-small: 1.4;
+    
+    /* Отступы */
+    --spacing-xs: 4px;
+    --spacing-sm: 8px;
+    --spacing-md: 16px;
+    --spacing-lg: 24px;
+    --spacing-xl: 32px;
+    --spacing-xxl: 48px;
+    --spacing-xxxl: 64px;
+    
+    /* Скругления */
+    --radius-sm: 8px;
+    --radius-md: 16px;
+    --radius-lg: 50px;
+    
+    /* Тени */
+    --shadow-sm: 0 2px 4px rgba(90, 74, 66, 0.1);
+    --shadow-md: 0 4px 8px rgba(90, 74, 66, 0.15);
+    --shadow-lg: 0 8px 16px rgba(90, 74, 66, 0.2);
+    
+    /* Анимации */
+    --transition-fast: 0.2s;
+    --transition-normal: 0.3s;
+    --transition-slow: 0.5s;
+    --easing: ease-in-out;
+    --easing-out: ease-out;
+    --easing-spring: cubic-bezier(0.68, -0.55, 0.27, 1.55);
+    
+    /* Контейнеры */
+    --container-padding-mobile: 16px;
+    --container-padding-tablet: 32px;
+    --container-max-width: 1200px;
+}
+
+/* Desktop размеры шрифтов */
+@media (min-width: 1024px) {
+    :root {
+        --fs-h1: 3.5rem;
+        --fs-h2: 2.8rem;
+        --fs-h3: 2.2rem;
+        --fs-h4: 1.8rem;
+        --fs-body: 1.125rem;
+        --fs-small: 1rem;
+    }
+}

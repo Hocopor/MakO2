@@ -1,0 +1,174 @@
+/* Layout - Сетка и расположение */
+
+/* Grid системы */
+.grid {
+    display: grid;
+    gap: var(--spacing-lg);
+}
+
+.grid-2 {
+    grid-template-columns: 1fr;
+}
+
+.grid-3 {
+    grid-template-columns: 1fr;
+}
+
+.grid-4 {
+    grid-template-columns: 1fr;
+}
+
+@media (min-width: 768px) {
+    .grid-2 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .grid-3 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .grid-4 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .grid-3 {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .grid-4 {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* Flex системы */
+.flex {
+    display: flex;
+}
+
+.flex-col {
+    flex-direction: column;
+}
+
+.flex-row {
+    flex-direction: row;
+}
+
+.items-center {
+    align-items: center;
+}
+
+.items-start {
+    align-items: flex-start;
+}
+
+.items-end {
+    align-items: flex-end;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.justify-between {
+    justify-content: space-between;
+}
+
+.justify-around {
+    justify-content: space-around;
+}
+
+.gap-sm {
+    gap: var(--spacing-sm);
+}
+
+.gap-md {
+    gap: var(--spacing-md);
+}
+
+.gap-lg {
+    gap: var(--spacing-lg);
+}
+
+.gap-xl {
+    gap: var(--spacing-xl);
+}
+
+/* Специфичные layout-компоненты */
+.services-grid {
+    composes: grid grid-3;
+    margin-bottom: var(--spacing-xxl);
+}
+
+.benefits-grid {
+    composes: grid grid-4;
+}
+
+.reviews-slider {
+    composes: grid grid-3;
+}
+
+.footer-grid {
+    composes: grid grid-4;
+    margin-bottom: var(--spacing-xxl);
+}
+
+@media (max-width: 767px) {
+    .services-grid,
+    .benefits-grid,
+    .reviews-slider,
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Hero layout */
+.hero .container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xxl);
+}
+
+@media (min-width: 1024px) {
+    .hero .container {
+        flex-direction: row;
+        align-items: center;
+    }
+    
+    .hero-content {
+        flex: 1;
+    }
+    
+    .hero-image {
+        flex: 1;
+    }
+}
+
+/* About layout */
+.about .container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xxl);
+}
+
+@media (min-width: 768px) {
+    .about .container {
+        flex-direction: row;
+        align-items: center;
+    }
+    
+    .about-image {
+        flex: 1;
+    }
+    
+    .about-content {
+        flex: 1;
+    }
+}
+
+/* Contact layout */
+.contact-content {
+    max-width: 600px;
+    margin: 0 auto;
+}
